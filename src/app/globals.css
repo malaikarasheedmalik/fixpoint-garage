@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF6EF;
+  color: #5B2631;
+}
+
+::selection {
+  background-color: #B85C4A;
+  color: #FFFDFC;
+}
+
+/* 3D tilt effect for service/team cards */
+.tilt-card {
+  perspective: 1000px;
+}
+.tilt-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.tilt-card:hover .tilt-card-inner {
+  transform: rotateX(4deg) rotateY(-6deg) translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 40px -15px rgba(91, 38, 49, 0.35);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #D8C3A5;
+  border-radius: 999px;
+}
