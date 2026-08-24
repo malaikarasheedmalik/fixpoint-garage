@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 
 export type SubmitState = { ok: boolean; error?: string };
 
@@ -31,7 +31,7 @@ export async function submitReservation(
     return { ok: false, error: parsed.error.issues[0]?.message ?? "Invalid input" };
   }
   try {
-    await prisma.reservation.create({
+    await getPrisma().reservation.create({
       data: {
         name: parsed.data.name,
         email: parsed.data.email,
@@ -58,7 +58,7 @@ export async function submitContact(
     return { ok: false, error: parsed.error.issues[0]?.message ?? "Invalid input" };
   }
   try {
-    await prisma.contactMessage.create({
+    await getPrisma().contactMessage.create({
       data: {
         name: parsed.data.name,
         email: parsed.data.email,

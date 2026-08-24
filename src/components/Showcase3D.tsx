@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import Image from "next/image";
 
 /**
  * Interactive 3D showcase panel.
@@ -63,10 +64,11 @@ export default function Showcase3D({
             (e.currentTarget as HTMLVideoElement).style.display = "none";
           }}
         />
-        <img
+        <Image
           src={posterSrc}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover -z-[1]"
+          fill
+          className="absolute inset-0 object-cover -z-[1]"
         />
         <div
           style={{ transform: "translateZ(40px)" }}

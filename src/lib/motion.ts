@@ -1,21 +1,21 @@
 export const fadeUp = {
   hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 export const fadeIn = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+  show: { opacity: 1, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
 export const slideFromRight = {
   hidden: { opacity: 0, x: 40 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.65, ease: "easeOut" } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.65, ease: "easeOut" as const } },
 };
 
 export const scaleReveal = {
   hidden: { opacity: 0, scale: 0.94 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 export const staggerContainer = (stagger = 0.12, delay = 0) => ({
